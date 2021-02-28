@@ -24,6 +24,3 @@ def encode(plain_text):
 def decode(ciphered_text):
     ciphered_text = re.sub(r" ", "", ciphered_text)
     return ciphered_text
-
-
-print("TEST BRANCH_")
