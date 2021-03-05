@@ -12,14 +12,13 @@ class CircularBuffer:
         self.data = [""] * capacity
         self.current_index = 1
         self.read_index = 1
-        self.is_empty = True
 
     def __len__(self):
         return self.capacity
 
     def read(self):
         data_index = self.read_index % self.capacity
-        if self.is_empty:
+        if self.current_index == 1:
             raise BufferEmptyException("The buffer is empty. |uck off.")
         if self.data[data_index] == "":
             raise BufferEmptyException("We can read items only ones.")
@@ -34,7 +33,6 @@ class CircularBuffer:
             raise BufferFullException("The buffer is full. |uck off.")
         self.data[data_index] = data
         self.current_index += 1
-        self.is_empty = False
 
     def overwrite(self, data):
         if self.current_index >= self.capacity + 1:
@@ -47,4 +45,3 @@ class CircularBuffer:
         self.current_index = 1
         self.read_index = 1
         self.data = [""] * self.capacity
-        self.is_empty = True
