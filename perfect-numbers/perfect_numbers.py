@@ -7,8 +7,7 @@ def find_delimetres(number):
 
 
 def classify(number):
-    if number <= 0:
-        raise ValueError("Wrong number!")
+    if number <= 0: raise ValueError("Wrong number!")
     if number == 1:
         return "deficient"
     s = sum(find_delimetres(number))
@@ -16,5 +15,4 @@ def classify(number):
         return "perfect"
     elif s > number:
         return "abundant"
-    else:
-        return "deficient"
+    return "deficient"
