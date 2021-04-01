@@ -1,2 +1,2 @@
 ## Python
-This is an exercises, i have made for improving my python skills.
+There are an exercises, i have made for improving my python skills.
